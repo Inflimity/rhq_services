@@ -118,3 +118,16 @@
 .reveal.active .img-reveal {
     filter: grayscale(0%) scale(1);
 }
+
+#spiral-nav {
+    overflow: visible !important;
+    /* Forces links to show even when they fan out past the 20x20 hub */
+    width: 1px;
+    height: 1px;
+}
+
+.mobile-link {
+    white-space: nowrap;
+    /* Prevents text wrapping while fanning out */
+    z-index: 101;
+}
