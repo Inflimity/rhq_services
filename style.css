@@ -1,0 +1,120 @@
+/* --- Industrial Patterns --- */
+.industrial-grid {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    background-size: 30px 30px;
+}
+
+.mechanical-list li::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #f37021;
+    margin-right: 15px;
+    clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+}
+
+/* --- Scroll Reveal Animations --- */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-100 {
+    transition-delay: 100ms;
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+.delay-300 {
+    transition-delay: 300ms;
+}
+
+.img-reveal {
+    filter: grayscale(100%);
+    transition: filter 1.2s ease;
+}
+
+.reveal.active .img-reveal {
+    filter: grayscale(0%);
+}
+
+/* --- Industrial Inputs --- */
+.industrial-input {
+    width: 100%;
+    background-color: #f9fafb;
+    border-bottom: 4px solid #e5e7eb;
+    padding: 1rem;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.industrial-input:focus {
+    border-color: #f37021;
+    background-color: white;
+}
+
+/* --- Core Animation States --- */
+.reveal {
+    opacity: 0;
+    filter: blur(5px);
+    /* Adds a soft "beautiful" transition */
+    transition: all 1.2s cubic-bezier(0.17, 0.55, 0.55, 1);
+    will-change: transform, opacity;
+}
+
+/* Directions */
+.reveal-up {
+    transform: translateY(50px);
+}
+
+.reveal-left {
+    transform: translateX(-100px);
+}
+
+.reveal-right {
+    transform: translateX(100px);
+}
+
+/* The "Active" state when in viewport */
+.reveal.active {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0, 0);
+}
+
+/* Staggered Delays for Grid Items */
+.delay-100 {
+    transition-delay: 100ms;
+}
+
+.delay-200 {
+    transition-delay: 200ms;
+}
+
+.delay-300 {
+    transition-delay: 300ms;
+}
+
+.delay-400 {
+    transition-delay: 400ms;
+}
+
+/* Image Reveal Enhancement */
+.img-reveal {
+    filter: grayscale(100%) scale(1.1);
+    transition: filter 1.5s ease, transform 1.5s ease;
+}
+
+.reveal.active .img-reveal {
+    filter: grayscale(0%) scale(1);
+}
