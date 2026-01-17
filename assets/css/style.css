@@ -131,3 +131,21 @@
     /* Prevents text wrapping while fanning out */
     z-index: 101;
 }
+
+/* Ensure typed text is always white */
+.industrial-input {
+    color: black !important;
+}
+
+/* Fix for Chrome/Edge Autofill background and text color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus {
+    -webkit-text-fill-color: white;
+    -webkit-box-shadow: 0 0 0px 1000px #1a1a1a inset;
+    /* Use your bg-rhqDark color hex here */
+    transition: background-color 5000s ease-in-out 0s;
+}

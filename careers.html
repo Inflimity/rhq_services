@@ -263,7 +263,7 @@
             </div>
         </section>
 
-        <section class="py-24 bg-rhqDark text-white relative">
+        <!-- <section class="py-24 bg-rhqDark text-white relative">
             <div class="absolute inset-0 opacity-10 industrial-grid"></div>
             <div class="container mx-auto px-4 relative z-10">
                 <div class="max-w-4xl mx-auto reveal">
@@ -321,8 +321,88 @@
                     </form>
                 </div>
             </div>
+        </section> -->
+
+        <section class="py-24 bg-rhqDark text-white relative">
+            <div class="absolute inset-0 opacity-10 industrial-grid"></div>
+            <div class="container mx-auto px-4 relative z-10">
+                <div class="max-w-4xl mx-auto reveal">
+                    <div class="text-center mb-12">
+                        <h2 class="font-heading text-4xl uppercase italic">Recruitment <span
+                                class="text-rhqOrange text-shadow">Dashboard</span></h2>
+                        <p class="text-gray-400 mt-2 tracking-widest text-xs uppercase">Submit your credentials for
+                            review</p>
+                    </div>
+
+                    <form id="recruitmentForm"
+                        class="grid md:grid-cols-2 gap-8 bg-white/5 p-8 md:p-12 border-2 border-white/10 backdrop-blur-md">
+                        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                        <input type="hidden" name="subject" value="New Recruitment Application">
+
+                        <div class="space-y-6">
+                            <div class="space-y-1">
+                                <label
+                                    class="text-[10px] text-gray-300 font-bold uppercase tracking-widest text-rhqOrange">Full
+                                    Name</label>
+                                <input type="text" name="name"
+                                    class="industrial-input w-full text-white bg-[#1a1a1a] border-white/20 p-3 outline-none focus:border-rhqOrange transition-colors"
+                                    required>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-widest text-rhqOrange">Email
+                                    Address</label>
+                                <input type="email" name="email"
+                                    class="industrial-input w-full text-white bg-[#1a1a1a] border-white/20 p-3 outline-none focus:border-rhqOrange transition-colors"
+                                    required>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-widest text-rhqOrange">Desired
+                                    Position</label>
+                                <input type="text" name="position" placeholder="e.g., Heavy Hauler"
+                                    class="industrial-input w-full text-white bg-[#1a1a1a] border-white/20 p-3 outline-none focus:border-rhqOrange transition-colors"
+                                    required>
+                            </div>
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-widest text-rhqOrange">Cover
+                                    Letter / Expertise</label>
+                                <textarea name="message" rows="5"
+                                    class="industrial-input w-full text-white bg-[#1a1a1a] border-white/20 p-3 outline-none focus:border-rhqOrange transition-colors"></textarea>
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-[10px] font-bold uppercase tracking-widest text-rhqOrange">Resume
+                                    Link</label>
+                                <input type="text" name="resume_link" placeholder="Link to PDF or Portfolio"
+                                    class="industrial-input w-full text-white bg-[#1a1a1a] border-white/20 p-3 outline-none focus:border-rhqOrange transition-colors">
+                            </div>
+                        </div>
+
+                        <div class="md:col-span-2 pt-4">
+                            <button type="submit" id="submitBtn"
+                                class="w-full bg-rhqOrange text-white py-5 font-heading text-xl uppercase skew-x-[-12deg] shadow-2xl hover:bg-white hover:text-rhqBlue transition-all">
+                                <span class="inline-block skew-x-[12deg]" id="btnText">Send Application</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </section>
+
+        <div id="successModal"
+            class="fixed inset-0 z-[100] flex items-center justify-center hidden bg-black/90 backdrop-blur-sm px-4">
+            <div class="bg-[#1a1a1a] border-2 border-rhqOrange p-10 max-w-md w-full text-center">
+                <h3 class="text-3xl font-heading uppercase italic text-white mb-4">Application Sent</h3>
+                <p class="text-gray-400 mb-8">We have received your credentials and will be in touch shortly.</p>
+                <button onclick="document.getElementById('successModal').classList.add('hidden')"
+                    class="bg-rhqOrange text-white px-8 py-3 font-bold uppercase tracking-widest hover:bg-white hover:text-black transition-all">
+                    Dismiss
+                </button>
+            </div>
+        </div>
     </main>
+
 
 
     <footer class="bg-gray-900 text-gray-400 py-16 border-t-8 border-rhqOrange reveal reveal-up">
@@ -449,10 +529,10 @@
                             </svg>
                         </div>
                         <div>
-                            <span class="block text-[10px] text-gray-500 font-black uppercase mb-1">Corporate HQ</span>
+                            <span class="block text-[10px] text-gray-500 font-black uppercase mb-1">Site Address</span>
                             <address class="text-sm text-white not-italic leading-relaxed font-light">
                                 Pad 4 Township Rd 840,<br>
-                                Peace River, AB T8S
+                                Peace River, AB T8S 1S9
                             </address>
                         </div>
                     </div>
@@ -465,6 +545,25 @@
             </div>
         </div>
     </footer>
+
+
+    <div id="successModal"
+        class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black/80 backdrop-blur-sm px-4">
+        <div class="bg-rhqDark border-2 border-rhqOrange p-8 max-w-sm w-full text-center relative">
+            <div class="w-16 h-16 bg-rhqOrange/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg class="w-8 h-8 text-rhqOrange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="3" d="M5 13l4 4L19 7"></path>
+                </svg>
+            </div>
+            <h3 class="font-heading text-2xl uppercase italic text-white mb-2">Submission Successful</h3>
+            <p class="text-gray-400 text-sm mb-6">Your credentials have been received. Our team will review them
+                shortly.</p>
+            <button onclick="closeModal()"
+                class="w-full bg-white text-rhqDark py-2 font-bold uppercase tracking-widest hover:bg-rhqOrange hover:text-white transition-colors">
+                Close
+            </button>
+        </div>
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>
