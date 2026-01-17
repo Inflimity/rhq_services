@@ -133,19 +133,21 @@
 }
 
 /* Ensure typed text is always white */
+/* Ensure industrial inputs are readable (black text on light bg) */
 .industrial-input {
     color: black !important;
+    transition: all 0.3s ease;
 }
 
 /* Fix for Chrome/Edge Autofill background and text color */
+/* Fix for Chrome/Edge Autofill background and text color to match light theme */
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 textarea:-webkit-autofill,
 textarea:-webkit-autofill:hover,
 textarea:-webkit-autofill:focus {
-    -webkit-text-fill-color: white;
-    -webkit-box-shadow: 0 0 0px 1000px #1a1a1a inset;
-    /* Use your bg-rhqDark color hex here */
+    -webkit-text-fill-color: black !important;
+    -webkit-box-shadow: 0 0 0px 1000px white inset !important;
     transition: background-color 5000s ease-in-out 0s;
 }
