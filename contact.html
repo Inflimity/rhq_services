@@ -49,6 +49,8 @@
             @apply w-full bg-gray-50 border-b-4 border-gray-200 p-4 outline-none transition-all duration-300 focus:border-rhqOrange focus:bg-white;
         }
     </style>
+
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
 </head>
 
 <body class="bg-gray-50 text-gray-900 selection:bg-rhqOrange selection:text-white overflow-x-hidden">
@@ -148,60 +150,67 @@
                             <div class="h-1.5 w-20 bg-rhqOrange"></div>
                         </div>
 
-                        <form action="#" class="space-y-6">
+                        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST"
+                            class="space-y-6">
+                            <input type="hidden" name="access_key" value="792750d7-e613-42d2-a561-a28fd7bc19d2">
+                            <input type="hidden" name="subject" value="New RHQ General Inquiry">
+
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div class="space-y-1">
                                     <label class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Full
                                         Name</label>
-                                    <input type="text"
+                                    <input type="text" name="name"
                                         class="w-full bg-gray-50 border-b-4 border-gray-200 p-4 outline-none focus:border-rhqOrange transition-all"
                                         required>
                                 </div>
                                 <div class="space-y-1">
                                     <label
                                         class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Company</label>
-                                    <input type="text"
+                                    <input type="text" name="company"
                                         class="w-full bg-gray-50 border-b-4 border-gray-200 p-4 outline-none focus:border-rhqOrange transition-all">
                                 </div>
                             </div>
+
                             <div class="grid md:grid-cols-2 gap-6">
                                 <div class="space-y-1">
                                     <label class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Email
                                         Address</label>
-                                    <input type="email"
+                                    <input type="email" name="email"
                                         class="w-full bg-gray-50 border-b-4 border-gray-200 p-4 outline-none focus:border-rhqOrange transition-all"
                                         required>
                                 </div>
                                 <div class="space-y-1">
                                     <label class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Phone
                                         Number</label>
-                                    <input type="tel"
+                                    <input type="tel" name="phone"
                                         class="w-full bg-gray-50 border-b-4 border-gray-200 p-4 outline-none focus:border-rhqOrange transition-all"
                                         required>
                                 </div>
                             </div>
+
                             <div class="space-y-1">
                                 <label class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Service
                                     Interest</label>
-                                <select
+                                <select name="service"
                                     class="w-full bg-gray-50 border-b-4 border-gray-200 p-4 outline-none focus:border-rhqOrange transition-all uppercase font-bold text-xs">
-                                    <option>Heavy Construction</option>
-                                    <option>Mining Services</option>
-                                    <option>Reclamation</option>
-                                    <option>General Inquiry</option>
+                                    <option value="Heavy Construction">Heavy Construction</option>
+                                    <option value="Mining Services">Mining Services</option>
+                                    <option value="Reclamation">Reclamation</option>
+                                    <option value="General Inquiry">General Inquiry</option>
                                 </select>
                             </div>
+
                             <div class="space-y-1">
                                 <label class="text-[10px] font-bold uppercase tracking-widest text-gray-400">Project
                                     Details</label>
-                                <textarea rows="5"
+                                <textarea name="message" rows="5"
                                     class="w-full bg-gray-50 border-b-4 border-gray-200 p-4 outline-none focus:border-rhqOrange transition-all"
                                     required></textarea>
                             </div>
 
-                            <button type="submit"
+                            <button type="submit" id="contactSubmitBtn"
                                 class="bg-rhqOrange text-white px-12 py-4 font-heading text-lg hover:scale-105 transition-transform shadow-xl skew-x-[-12deg] w-full md:w-auto">
-                                <span class="inline-block skew-x-[12deg]">SEND INQUIRY</span>
+                                <span class="inline-block skew-x-[12deg]" id="contactBtnText">SEND INQUIRY</span>
                             </button>
                         </form>
                     </div>
@@ -267,15 +276,15 @@
                                                     <span
                                                         class="block text-[10px] uppercase font-bold tracking-widest text-gray-400">General
                                                         Inquiries</span>
-                                                    <a href="mailto:info@rhqservices.com"
-                                                        class="text-xl font-light hover:text-rhqOrange transition-colors block">Info@rhqservices.com</a>
+                                                    <a href="mailto:info@rhqservices.ca"
+                                                        class="text-xl font-light hover:text-rhqOrange transition-colors block">Info@rhqservices.ca</a>
                                                 </div>
                                                 <div>
                                                     <span
                                                         class="block text-[10px] uppercase font-bold tracking-widest text-gray-400">Administrative
                                                         Support</span>
-                                                    <a href="mailto:admin@rhqservices.com"
-                                                        class="text-xl font-light hover:text-rhqOrange transition-colors block">Admin@rhqservices.com</a>
+                                                    <a href="mailto:admin@rhqservices.ca"
+                                                        class="text-xl font-light hover:text-rhqOrange transition-colors block">Admin@rhqservices.ca</a>
                                                 </div>
                                             </div>
                                         </div>
@@ -478,18 +487,18 @@
                                 <div>
                                     <span class="block text-[10px] text-gray-500 font-black uppercase">General /
                                         Admin</span>
-                                    <a href="mailto:info@rhqservices.com"
-                                        class="text-white hover:text-rhqOrange text-sm transition-all block lowercase">info@rhqservices.com</a>
-                                    <a href="mailto:admin@rhqservices.com"
-                                        class="text-white hover:text-rhqOrange text-sm transition-all block lowercase">admin@rhqservices.com</a>
+                                    <a href="mailto:info@rhqservices.ca"
+                                        class="text-white hover:text-rhqOrange text-sm transition-all block lowercase">info@rhqservices.ca</a>
+                                    <a href="mailto:admin@rhqservices.ca"
+                                        class="text-white hover:text-rhqOrange text-sm transition-all block lowercase">admin@rhqservices.ca</a>
                                 </div>
                                 <div>
                                     <span class="block text-[10px] text-gray-500 font-black uppercase">Ops /
                                         Careers</span>
-                                    <a href="mailto:operation@rhqservices.com"
-                                        class="text-white hover:text-rhqOrange text-sm transition-all block lowercase">operation@rhqservices.com</a>
-                                    <a href="mailto:hr@rhqservices.com"
-                                        class="text-white hover:text-rhqOrange text-sm transition-all block lowercase">hr@rhqservices.com</a>
+                                    <a href="mailto:operation@rhqservices.ca"
+                                        class="text-white hover:text-rhqOrange text-sm transition-all block lowercase">operation@rhqservices.ca</a>
+                                    <a href="mailto:hr@rhqservices.ca"
+                                        class="text-white hover:text-rhqOrange text-sm transition-all block lowercase">hr@rhqservices.ca</a>
                                 </div>
                             </div>
                         </div>
@@ -524,6 +533,33 @@
         </div>
     </footer>
 
+    <div id="successModal"
+        class="fixed inset-0 z-[100] flex items-center justify-center hidden bg-black/90 backdrop-blur-sm px-4">
+        <div class="bg-rhqDark border-2 border-rhqOrange p-10 max-w-md w-full text-center relative overflow-hidden">
+            <div class="absolute inset-0 opacity-5 industrial-grid pointer-events-none"></div>
+
+            <div class="relative z-10">
+                <div
+                    class="w-20 h-20 bg-rhqOrange/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-rhqOrange/20">
+                    <svg class="w-10 h-10 text-rhqOrange" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                    </svg>
+                </div>
+
+                <h3 class="text-3xl font-heading uppercase italic text-white mb-2">Message Successful</h3>
+                <div class="h-1 w-12 bg-rhqOrange mx-auto mb-6"></div>
+
+                <p class="text-gray-400 mb-8 uppercase text-[10px] font-bold tracking-[0.2em] leading-relaxed">
+                    Your information has been received. An RHQ representative will follow up shortly.
+                </p>
+
+                <button onclick="closeModal()"
+                    class="w-full bg-white text-rhqBlue py-4 font-bold uppercase tracking-widest hover:bg-rhqOrange hover:text-white transition-all skew-x-[-12deg]">
+                    <span class="inline-block skew-x-[12deg]">Dismiss</span>
+                </button>
+            </div>
+        </div>
+    </div>
 
     <script src="assets/js/script.js"></script>
 </body>
